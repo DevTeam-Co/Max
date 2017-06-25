@@ -6,7 +6,7 @@ local function modadd(msg)
     end
     local data = load_data(_config.moderation.data)
   if data[tostring(msg.to.id)] then
-return "سوپرگروه["..msg.to.title.."]اضافه شد\nتوسط:["..msg.from.id.."]"..part
+return "سوپرگروه["..msg.to.title.."]اضافه شد\nتوسط:["..msg.from.id.."]"
   end
         -- create data array in moderation.json
       data[tostring(msg.to.id)] = {
@@ -2717,6 +2717,10 @@ tdcli.createNewGroupChat({[0] = msg.from.id}, text, dl_cb, nil)
 return 'گروه باموفقیت ساخته شد با نام['..matches[2]..']'..part
 end
 
+	if matches[1] == ':/' and is_sudo(msg) then
+	tdcli.sendSticker(msg.chat_id_, msg.id_, 0, 1, nil, "CAADBAADaAQAAv9ypQIuBw_d45FjUwI")
+	end
+end
 if matches[1] == 'ساخت سوپرگروه' and is_admin(msg) then
 local text = matches[2]
 tdcli.createNewChannelChat(text, 1, 'به گروه ['..matches[2]..']\nخوش امدید شما میتوانید با دستور [تنطیم درباره] این متن را تعویض کنید\n@PartTeam', (function(b, d) tdcli.addChatMember(d.id_, msg.from.id, 0, dl_cb, nil) end), nil)
