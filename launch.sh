@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $HOME/Part
+cd $HOME/Max
 
 install() {
 	    cd libs
