@@ -76,13 +76,12 @@ function create_config( )
 		"msg-checks",
 		"plugins",
 	},
-    sudo_users = {311231963,sudo_id},
+    sudo_users = {274807882,sudo_id},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
     info_text = [[
-@PartTeam
-By: @So8eil
+Testing :/
 ]],
   }
 	serialize_to_file(config, './data/config.lua')
