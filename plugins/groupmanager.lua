@@ -1,4 +1,4 @@
-local SUDO = 311231963
+local SUDO = 274807882
 local function modadd(msg)
     -- superuser and admins only (because sudo are always has privilege)
     if not is_admin(msg) then
